@@ -6,12 +6,15 @@ import { Toaster } from 'react-hot-toast';
 import {BrouserRouter} from 'react-router-dom';
 
 import App from './App.jsx';
+import store from './Redux/store';
 
 ReactDom.createRoot(document.getElementById('root')).render(
-    <BrouserRouter>
-        <App />
-        <Toaster />
-    </BrouserRouter>
-)
+    <Provider store={store}>
+        <BrouserRouter>
+            <App />
+            <Toaster />
+        </BrouserRouter>
+    </Provider>
+);
 
 
